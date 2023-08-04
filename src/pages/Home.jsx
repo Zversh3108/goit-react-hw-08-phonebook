@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 
 import { selectIsLoggedIn } from 'redux/auth/selectors';
 import { selectUser } from 'redux/auth/selectors';
-import { Heading, Box, Container, SkipNavLink, border } from '@chakra-ui/react';
+import { Heading, Box, Container} from '@chakra-ui/react';
 import { NavLinkStyled } from 'components/AuthNav/AuthNavStyled';
 export default function HomePage() {
   const isUserLoggedIn = useSelector(selectIsLoggedIn);
