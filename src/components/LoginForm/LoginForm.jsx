@@ -25,13 +25,13 @@ export const LoginForm = () => {
         isClosable: true,
       });
     }
-  }, [isError, toast]); 
+  }, [isError, toast]);
   const initialValues = {
     email: 'Test-user-1@gmail.com',
     password: 'Test-user-1',
   };
 
-  const [formData, setFormData] = useState(initialValues); // Додайте цей рядок
+  const [formData, setFormData] = useState(initialValues);
   const [show, setShow] = React.useState(false);
 
   const handleClick = () => setShow(!show);
