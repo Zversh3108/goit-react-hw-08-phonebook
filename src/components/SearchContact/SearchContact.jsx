@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import { useDispatch } from 'react-redux';
 import { filterContacts } from 'redux/filter/filterSlice';
 import { InputGroup, Input } from '@chakra-ui/react';
+
 export default function SearchContactByName({ title }) {
   const dispatch = useDispatch();
 
@@ -11,11 +11,12 @@ export default function SearchContactByName({ title }) {
     const { value } = evt.target;
     dispatch(filterContacts(value));
   };
+
   return (
     <div>
       <p>{title}</p>
       <form>
-        <InputGroup size="sm">
+        <InputGroup>
           <Input
             type="text"
             onChange={onFilterChange}
@@ -29,6 +30,7 @@ export default function SearchContactByName({ title }) {
     </div>
   );
 }
+
 SearchContactByName.propTypes = {
   title: PropTypes.string.isRequired,
 };

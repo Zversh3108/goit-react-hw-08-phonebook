@@ -14,7 +14,7 @@ export const UserMenu = () => {
   return (
     <UserMenuStyled>
       <p>{user.email}</p>
-      <Button size="xs" mb="0.5" onClick={() => handleLogout()}>
+      <Button size="xs" mb="2" mt="3" onClick={() => handleLogout()}>
         Logout
       </Button>
     </UserMenuStyled>

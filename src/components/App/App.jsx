@@ -1,4 +1,4 @@
-import React, { useEffect, lazy } from 'react';
+import React, { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { ChakraProvider } from '@chakra-ui/react';
 import { RestrictedRoute } from 'components/RestrictedRoute';
@@ -9,16 +9,16 @@ import { useSelector } from 'react-redux';
 import { selectIsRefreshing } from 'redux/auth/selectors';
 import { Loader } from 'components/Loader/Loader';
 import Notification from 'components/Notification/Notification';
-
 import SharedLayout from 'components/SharedLayout/SharedLayout';
+import HomePage from 'pages/Home';
+import RegisterPage from 'pages/Register';
+import LoginPage from 'pages/Login';
 
-const HomePage = lazy(() => import('pages/Home'));
-const RegisterPage = lazy(() => import('pages/Register'));
-const LoginPage = lazy(() => import('pages/Login'));
-const ContactsPage = lazy(() => import('pages/Contacts'));
-
+import ContactsPage from 'pages/Contacts';
+import { AddContactPage } from 'pages/AddContactPage';
 export default function App() {
   const dispatch = useDispatch();
+
   const isRefreshing = useSelector(selectIsRefreshing);
 
   useEffect(() => {
@@ -59,7 +59,17 @@ export default function App() {
                   component={<ContactsPage />}
                 />
               }
-            />
+            >
+              <Route
+                path="addContact"
+                element={
+                  <PrivateRoute
+                    redirectTo="/login"
+                    component={<AddContactPage isOpen={true} />}
+                  />
+                }
+              />
+            </Route>
           </Route>
           <Route
             path="*"

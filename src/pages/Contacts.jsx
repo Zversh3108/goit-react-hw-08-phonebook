@@ -1,19 +1,33 @@
-import AddContactForm from 'components/AddContactForm/AddContactForm';
+import React, { Suspense } from 'react';
+import { Flex, Box } from '@chakra-ui/react';
 import SearchContactByName from 'components/SearchContact/SearchContact';
 import ContactList from 'components/ContactList/ContactList';
-import { Flex, Box, Grid } from '@chakra-ui/react';
+import { ToAddContactButton } from 'components/ToAddContactButton/ToAddContactButton';
+
+import { Outlet } from 'react-router-dom';
+
 export default function ContactsPage() {
   return (
-    <Flex direction="column" align="left">
-      <SearchContactByName title={'Search contact by name'} />
-      <Grid templateColumns="1fr 1fr" gap={4} mt={4}>
+    <Flex direction="column">
+      <Flex justifyContent="end" alignItems="center">
         <Box>
-          <ContactList />
+          <ToAddContactButton />
         </Box>
-        <Box>
-          <AddContactForm />
-        </Box>
-      </Grid>
+      </Flex>
+
+      <Box mt={4}>
+        <SearchContactByName title={'Search contact by name'} />
+      </Box>
+
+      <Box mt={4}>
+        <ContactList />
+      </Box>
+
+      <Box mt={4}>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Outlet />
+        </Suspense>
+      </Box>
     </Flex>
   );
 }

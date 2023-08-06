@@ -48,7 +48,7 @@ export default function ContactList() {
   const listItemHoverBgColor = useColorModeValue('gray.200', 'gray.600');
 
   return (
-    <Box mt={4}>
+    <Box>
       {isError ? (
         <Notification message={'Sorry, something went wrong'} />
       ) : hasContacts ? (
@@ -60,7 +60,7 @@ export default function ContactList() {
                 bg: listItemHoverBgColor,
                 transition: 'background-color 0.6s',
               }}
-              p={2}
+              p={1}
               borderRadius="md"
               color="black"
               display="flex"

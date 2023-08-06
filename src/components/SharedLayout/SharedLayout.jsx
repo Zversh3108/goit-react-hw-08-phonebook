@@ -12,9 +12,9 @@ const SharedLayout = () => {
         <NavBar />
       </header>
       <Container
-        maxWidth="95%"
+        maxWidth="100%"
         bgGradient="linear(to-r, green.200, pink.500) "
-        p="10"
+        p="40"
         borderRadius="15"
         mt="5"
       >
