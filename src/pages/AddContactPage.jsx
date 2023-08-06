@@ -20,7 +20,7 @@ export const AddContactPage = ({ isOpen }) => {
     <Modal isOpen={isOpen} onClose={OnCloseModal}>
       <ModalOverlay />
       <ModalContent>
-        <ModalHeader>Модальне вікно</ModalHeader>
+        <ModalHeader>Add Contact</ModalHeader>
         <ModalCloseButton />
         <ModalBody>
           <AddContactForm />
