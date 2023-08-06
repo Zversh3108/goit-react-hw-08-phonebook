@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { NavLink } from 'react-router-dom';
 
 export const NavLinkStyled = styled(NavLink)`
-  padding: 24px 35px;
+  padding: 24px 10px;
   position: relative;
   color: inherit;
   font-weight: bold;
@@ -30,12 +30,12 @@ export const NavLinkStyled = styled(NavLink)`
   }
 
   :not(:last-child) {
-    margin-right: 30px;
+    margin-right: 5px;
   }
 `;
 
 export const AuthNavStyled = styled.nav`
-  margin-right: 15px;
+
   margin-left: 15px;
   display: flex;
   align-items: center;

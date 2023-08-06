@@ -14,7 +14,8 @@ const SharedLayout = () => {
       <Container
         maxWidth="100%"
         bgGradient="linear(to-r, green.200, pink.500) "
-        p="40"
+        pt="40"
+        pb="40"
         borderRadius="15"
         mt="5"
       >
